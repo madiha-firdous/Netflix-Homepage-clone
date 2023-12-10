@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2699/PNG/512/netflix_logo_icon_170919.png" type="image/x-icon">
+    <title>Netflix India-Watch TV Shows Online,Watch Movies Online</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins',sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            color: #fff;
+        }
+        .header{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 10px 8%;
+            position: relative;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .logo{
+            width: 200px;
+            cursor: pointer;
+            margin-top: auto;
+            -ms-transform-origin-y: 40px;
+        }
+        nav button{
+            border: 0;
+            outline: 0;
+            background: #db0001;
+            color: #fff;
+            padding: 7px 20px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .language-btn{
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+        }
+        .img-btn{
+            width: 20px;
+            height: 15px;
+            margin-left: 10px;
+        }
+       .header-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            margin-top: 70px;
+       }
+       .header-content h1{
+            font-size: 60px;
+            line-height: 70px;
+            font-weight: 600;
+            max-width: 650px;
+       }
+    .header-content h3{
+            font-weight: 400;
+            margin-bottom: 20px;
+    }
+    .email-signup{
+        background-color: #fff;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .email-signup input{
+        flex: 1;
+        border: 0;
+        outline: 0;
+        margin-left: 20px;
+    }
+    .email-signup button{
+        background: #db0001;
+        border: 0;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 15px 30px;
+    }
+    .features{
+        padding: 50px 12%;
+        font-size: 22px;
+    }
+    .row{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 50px 0;
+    }
+    .text-col{
+        flex-basis: 50%;
+        margin-bottom: 20px;
+    }
+    .img-col{
+        flex-basis: 50%;
+        margin-bottom: 20px;
+    }
+    .img-col img{
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+    .features h2{
+        font-size: 50px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .faq{
+       padding: 10px 12%;
+       text-align: center;
+       font-size: 18px; 
+    }
+    .faq h2{
+        font-weight: 500;
+        font-size: 40px;
+    }
+    .accordion{
+        margin: 60px auto;
+        width: 100%;
+        max-width: 750px;
+    }
+    .accordion li{
+        list-style: none;
+        width: 100%;
+        padding: 5px;
+    }
+    .accordion li label{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        background: #303030; 
+        margin-bottom: 2px;
+        cursor: pointer;
+        position: relative;
+    }
+    label::after{
+        content: '+';
+        font-size: 34px;
+        position: absolute;
+        right: 20px;
+        transition: transform 0.5s;
+    }
+    input[type="radio"]{
+        display: none;
+    }
+    .accordion .content{
+        background: #303030;
+        text-align: left;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s, padding 0.5s;
+    }
+    .accordion input[type="radio"]:checked + label + .content{
+        max-height: 600px;
+        padding: 30px 20px;
+    }
+    .accordion input[type="radio"]:checked + label::after{
+        transform: rotate(135deg);
+    }
+    .faq .email-signup{
+        max-width: 600px;
+        margin: 20px auto 60px;
+    }
+    .faq small{
+        font-size: 13px;
+    }
+    .footer{
+        padding: 50px 15% 10px;
+        border-top: 6px solid #333;
+        color: #777;
+    }
+    .footer h2{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+    .footer col{
+        flex-basis: 25%;
+        flex-grow: 1;
+        margin-bottom: 20px;
+    }
+    .footer col a{
+        display: block;
+        text-decoration: none;
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 1 0px;
+    }
+    .footer .row{
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    .footer .language-btn{
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 3px;
+    }
+    .copy-right-txt{
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+         
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+      <nav>
+        <img src="https://www.freepnglogos.com/uploads/netflix-logo-history-png-33.png" class="logo">
+        <div>
+            <button class="language-btn">English<img class="img-btn" src="https://flaticons.net/icon.php?slug_category=application&slug_icon=arrowhead-down-01"></button>
+            <button>Sign in</button>
+        </div>
+      </nav>
+      <div class="header-content">
+        <h1>Unlimited movies,TV shows and more.</h1>
+        <h3>Watch anywhere.Cancel anytime.</h3>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <form class="email-signup">
+            <input type="email" placeholder="Email address" required>
+            <button type="submit">Get Started</button>
+        </form>
+      </div>
+    </div>
+    <div class="features">
+        <div class="row">
+            <div class="text-col">
+                <h2>Enjoy on your TV</h2>
+                <p>Watch on smart TVs, Playstation, Xbox, Chromecast, Apple TV,Blu-ray players and more.</p>
+            </div>
+            <div class="img-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8-tVubnJVK_eX7BzFlGHIXMZuoYsDRCJQeefl0qAu5Oo8hfDQ2wJKAMuCyiUMM25GV7Q&usqp=CAU">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-col">
+                <img src="https://blogs.windows.com/wp-content/uploads/prod/sites/2/2017/04/downloads9.png">
+            </div>
+            <div class="text-col">
+                <h2>Download your shows to watch offline</h2>
+                <p>Save your favourites easily and always have something to watch</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-col">
+                <h2>Watch everywhere</h2>
+                <p>Stream unlimited movies and TV shows on your phone,tablet,laptop and TV.</p>
+            </div>
+            <div class="img-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavyAgBc_DQool-ZvpoAL908n5EZZILcQE6adVdYZUEIndjwAsNGRTsVi0wkrf2yys70k&usqp=CAU">
+            </div>
+        </div>
+        <div class="row">
+             <div class="img-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoJIDU-OqjuU6Ee4G7-N9RVEFu3E2vXOalRsNv4Uuy4ozOsgGWmMfkYRJBiGjffwjNgg0&usqp=CAU">
+            </div>
+            <div class="text-col">
+                <h2>Create profiles for children</h2>
+                <p>Send children on adventures with their favourite characters in a space just for them free with your membership.</p>
+            </div>
+        </div>
+    </div>
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="accordion">
+             <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first">What is Netflix?</label>
+                <div class="content">
+                    <p>Netflix is a subscription-based streaming service that allows our members to watch TV shows and movies on an internet-connected device.
+                    Depending on your plan, you can also download TV shows and movies to your iOS, Android, or Windows 10 device and watch without an internet connection.
+                    </p>
+                </div>
+             </li>
+             <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">How much does Netflix cost?</label>
+                <div class="content">
+                    <p>The mobile plan costs Rs 149 per month, while the basic plan is priced at Rs 199 a month. The Standard and Premium plan is for Rs 499 and Rs 649, respectively. 
+                        The Basic plan (for those who keep it) streams in just HD (720p) resolution. The most expensive option, the Premium plan, can tap into content in 4K Ultra HD. Netflix remains one of the few streaming video services that require a more expensive plan for features like 4K, HDR, and Dolby Atmos.
+                    </p>
+                </div>
+             </li>
+             <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">Where is Netflix available?</label>
+                <div class="content">
+                    <p>Netflix is available in over 190 countries around the world. Each country has its own catalog of original and licensed TV shows and movies. The country on your account can't be changed unless you move to a new one. </p>
+                </div>
+             </li>
+             <li>
+                <input type="radio" name="accordion" id="fourth">
+                <label for="fourth">How to search and browse Netflix?</label>
+                <div class="content">
+                    <p>To search TV shows and movies, look for the Search icon Search icon in the Netflix app and then enter your search term.
+                    Your homepage shows rows of TV shows and movies we think you’ll like. You can narrow these suggestions by selecting TV Shows or Movies from the menu. You can further narrow by Genres or Categories. The name of this selection, and its values, may vary between devices. </p>
+                </div>
+             </li>
+        </ul>
+        <small>Ready to watch? Enter your email to create or restart your membership.</small>
+        <form class="email-signup">
+            <input type="email" placeholder="Email address" required>
+            <button type="submit">Get Started</button>
+        </form>
+    </div>
+    <div class="footer">
+        <h2>Questions? call 000-000-000-000 </h2>
+        <div class="row">
+            <div class="col">
+                <a href="#">FAQ</a><br>
+                <a href="#">Investor Relations</a><br>
+                <a href="#">Privacy</a><br>
+                <a href="#">Speed Test</a><br>
+            </div>
+            <div class="col">
+                <a href="#">Help Center</a>
+                <a href="#">Jobs</a>
+                <a href="#">Cookies Preferences</a>
+                <a href="#">Legal Notices</a>
+            </div>
+            <div class="col">
+                <a href="#">Account</a>
+                <a href="#">Ways to watch</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Only on Netflix</a>
+            </div>
+            <div class="col">
+                <a href="#">Media Center</a>
+                <a href="#">Terms of Users</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <button class="language-btn">English<img class="img-btn" src="https://flaticons.net/icon.php?slug_category=application&slug_icon=arrowhead-down-01"></button>
+        <p class="copy-right-txt">Netflix India</p>
+    </div>
+</body>
+</html>
